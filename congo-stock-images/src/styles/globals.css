@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #003559;
+  --primary: #FFDD15;
+  --primary-light: #FFE75C;
+  --primary-dark: #E6C700;
+  --secondary: #003559;
+  --secondary-light: #004B7A;
+  --secondary-dark: #002540;
+  --gray-light: #F5F5F5;
+  --gray-medium: #E0E0E0;
+  --gray-dark: #757575;
+  --accent: #FFDD15;
+  --text-light: #F3F4F6;
+  --text-dark: #003559;
+  --danger: #DC2626;
+  --success: #10B981;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0A1A2B;
+    --foreground: #F3F4F6;
+    --primary: #FFDD15;
+    --primary-light: #FFE75C;
+    --primary-dark: #E6C700;
+    --secondary: #003559;
+    --secondary-light: #004B7A;
+    --secondary-dark: #002540;
+    --gray-light: #252F3F;
+    --gray-medium: #374151;
+    --gray-dark: #6B7280;
+    --accent: #FFDD15;
+    --text-light: #F3F4F6;
+    --text-dark: #003559;
+    --danger: #EF4444;
+    --success: #10B981;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Layout */
+.container-custom {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+/* Typography */
+.heading-1 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.heading-2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: #003559 !important;
+}
+
+.heading-3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+@media (min-width: 768px) {
+  .heading-1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  
+  .heading-2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  
+  .heading-3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .heading-1,
+  .heading-3 {
+    color: var(--text-light);
+  }
+  
+  /* On maintient la couleur de heading-2 même en mode sombre */
+  .heading-2 {
+    color: #003559 !important;
+  }
+}
+
+/* Components */
+.card {
+  background-color: white;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border: 1px solid var(--gray-medium);
+}
+
+.card-feature {
+  background-color: var(--secondary);
+  border-color: var(--secondary-light);
+}
+
+.card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-4px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .card {
+    background-color: var(--secondary);
+    border-color: var(--secondary-light);
+  }
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-weight: 600;
+  padding: 0.625rem 1.5rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(255, 221, 21, 0.2);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(255, 221, 21, 0.25);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(255, 221, 21, 0.2);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--primary);
+  font-weight: 600;
+  padding: 0.625rem 1.5rem;
+  border-radius: 9999px;
+  border: 2px solid var(--primary);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 221, 21, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+.btn-outline {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--secondary);
+  font-weight: 600;
+  padding: 0.625rem 1.5rem;
+  border-radius: 9999px;
+  border: 2px solid var(--secondary);
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--secondary);
+  color: white;
+}
+
+/* Custom utility classes */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+}
+
+.bg-gradient-secondary {
+  background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+} 
